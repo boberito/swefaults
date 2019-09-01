@@ -34,6 +34,45 @@ class ViewController: NSViewController {
         }
     }
     
+    func prefSwitch(result: PrefResult) -> [String:String?] {
+        switch result.managed {
+        case .Managed:
+            return([
+                "Managed" : "Managed",
+                "Domain" : result.domain ?? "",
+                "Key" : result.key ?? "",
+                "Value" : result.value,
+                "Location" : nil
+                ])
+        case .NotManaged:
+            return([
+                "Managed" : "Not Managed",
+                "Domain" : result.domain ?? "",
+                "Key" : result.key ?? "",
+                "Value" : result.value,
+                "Location" : result.location
+                ])
+        case .NotFound:
+            if result.key == nil {
+                return([
+                    "Managed" : nil,
+                    "Domain" : prefDomainField.stringValue,
+                    "Key" : "Key not specificed",
+                    "Value" : nil,
+                    "Location" : nil
+                    ])
+            } else {
+                return([
+                    "Managed" : "Not found or set",
+                    "Domain" : prefDomainField.stringValue,
+                    "Key" : result.key ?? "",
+                    "Value" : nil,
+                    "Location" : nil
+                    ])
+            }
+        }
+    }
+    
     func processPrefs(fileURL: String) {
         preference.removeAll()
         do {
@@ -42,32 +81,7 @@ class ViewController: NSViewController {
             
             for entry in parsedCSV {
                 let result = prefCheck.prefCheck(domain: entry[0], key: entry[1])
-                switch result.managed {
-                case .Managed:
-                    preference.append([
-                        "Managed" : "Managed",
-                        "Domain" : result.domain,
-                        "Key" : result.key,
-                        "Value" : result.value ?? "not right",
-                        "Location" : nil
-                        ])
-                case .NotManaged:
-                    preference.append([
-                        "Managed" : "Not Managed",
-                        "Domain" : result.domain,
-                        "Key" : result.key,
-                        "Value" : result.value,
-                        "Location" : result.location!
-                        ])
-                case .NotFound:
-                    preference.append([
-                        "Managed" : "Not found or Set",
-                        "Domain" : result.domain,
-                        "Key": result.key,
-                        "Value" : result.value,
-                        "Location" : nil
-                        ])
-                }
+                preference.append(prefSwitch(result: result))
             }
         } catch {
             //error
@@ -100,85 +114,26 @@ class ViewController: NSViewController {
             let array_temp = flatten(keys)
             let array = array_temp as! [String]
             for key in array {
-                let result = prefCheck.prefCheck(domain: prefDomainField.stringValue, key: key as! String)
-                switch result.managed {
-                case .Managed:
-                    preference.append([
-                        "Managed" : "Managed",
-                        "Domain" : result.domain,
-                        "Key" : result.key,
-                        "Value" : result.value,
-                        "Location" : nil
-                        ])
-                case .NotManaged:
-                    preference.append([
-                        "Managed" : "Not Managed",
-                        "Domain" : result.domain,
-                        "Key" : result.key,
-                        "Value" : result.value,
-                        "Location" : result.location
-                        ])
-                case .NotFound:
-                    preference.append([
-                        "Managed" : "Not found or set",
-                        "Domain" : prefDomainField.stringValue,
-                        "Key" : result.key ?? "",
-                        "Value" : nil,
-                        "Location" : nil
-                        ])
-                }
+                let result = prefCheck.prefCheck(domain: prefDomainField.stringValue, key: key )
+                preference.append(prefSwitch(result: result))
             }
         } else {
-        
-        if prefDomainField.stringValue == ""{
-            preference.append([
-                "Managed" : nil,
-                "Domain" : "No preference domain specified",
-                "Key" : nil,
-                "Value" : nil,
-                "Location" : nil
-                ])
-        } else {
-            let result = prefCheck.prefCheck(domain: prefDomainField.stringValue, key: prefKeyField.stringValue)
-            switch result.managed {
-            case .Managed:
+            
+            if prefDomainField.stringValue == ""{
                 preference.append([
-                    "Managed" : "Managed",
-                    "Domain" : result.domain,
-                    "Key" : result.key,
-                    "Value" : result.value,
+                    "Managed" : nil,
+                    "Domain" : "No preference domain specified",
+                    "Key" : nil,
+                    "Value" : nil,
                     "Location" : nil
                     ])
-            case .NotManaged:
-                preference.append([
-                    "Managed" : "Not Managed",
-                    "Domain" : result.domain,
-                    "Key" : result.key,
-                    "Value" : result.value,
-                    "Location" : result.location
-                    ])
-            case .NotFound:
-                if result.key == nil {
-                    preference.append([
-                        "Managed" : nil,
-                        "Domain" : prefDomainField.stringValue,
-                        "Key" : "Key not specificed",
-                        "Value" : nil,
-                        "Location" : nil
-                        ])
-                } else {
-                    preference.append([
-                        "Managed" : "Not found or set",
-                        "Domain" : prefDomainField.stringValue,
-                        "Key" : result.key ?? "",
-                        "Value" : nil,
-                        "Location" : nil
-                        ])
-                }
+            } else {
+                let result = prefCheck.prefCheck(domain: prefDomainField.stringValue, key: prefKeyField.stringValue)
+                preference.append(prefSwitch(result: result))
             }
             
         }
-        }
+        
         prefsTableView.reloadData()
     }
 }

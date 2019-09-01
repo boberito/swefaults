@@ -9,14 +9,14 @@
 import Foundation
 
 class PrefClass {
-    func prefCheck(domain: String, key: String) -> (managed: PrefStat, domain: String?, key: String?, value: String?, location: String?){
+    func prefCheck(domain: String, key: String) -> (PrefResult){
         let bundle_plist = UserDefaults.init(suiteName: domain)
         
         if let preference_value = bundle_plist?.value(forKey: key) {
   
             if CFPreferencesAppValueIsForced(key as CFString, domain as CFString) {
-                
-                return ( .Managed, domain, key, "\(preference_value as Any)", nil)
+                return (PrefResult(managed: .Managed, domain: domain, key: key, value: "\(preference_value)", location: nil))
+                //return ( .Managed, domain, key, "\(preference_value as Any)", nil)
             } else {
                 
                 let homeDirURL = FileManager.default.homeDirectoryForCurrentUser
@@ -55,12 +55,14 @@ class PrefClass {
                 
                 for level in levels {
                     if CFPreferencesCopyValue(key as CFString, level["domain"] as! CFString, level["user"] as! CFString, level["host"] as! CFString) != nil {
-                        return (.NotManaged, (level["domain"] as! String), key, "\(preference_value as Any)",(level["file"] as! String))
+                        return (PrefResult(managed: .NotManaged, domain: (level["domain"] as! String), key: key, value: "\(preference_value as Any)", location: (level["file"] as! String)))
+                        //return (.NotManaged, (level["domain"] as! String), key, "\(preference_value as Any)",(level["file"] as! String))
                         
                     }
                 }
             }
         }
-        return(.NotFound,domain,nil,nil,nil)
+        return(PrefResult(managed: .NotFound, domain: domain, key: nil, value: nil, location: nil))
+        //return(.NotFound,domain,nil,nil,nil)
     }
 }

@@ -7,17 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		739CE82A231C3F8400FB1A6E /* PrefResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 739CE829231C3F8400FB1A6E /* PrefResults.swift */; };
 		865ABF5B230EDE61004FDEBF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865ABF5A230EDE61004FDEBF /* AppDelegate.swift */; };
 		865ABF5D230EDE61004FDEBF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865ABF5C230EDE61004FDEBF /* ViewController.swift */; };
 		865ABF5F230EDE63004FDEBF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 865ABF5E230EDE63004FDEBF /* Assets.xcassets */; };
 		865ABF62230EDE63004FDEBF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 865ABF60230EDE63004FDEBF /* Main.storyboard */; };
-		865ABF6B230F2560004FDEBF /* NOTmain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865ABF6A230F2560004FDEBF /* NOTmain.swift */; };
+		865ABF6B230F2560004FDEBF /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865ABF6A230F2560004FDEBF /* main.swift */; };
 		86E923F32315C8A20041B4A4 /* DropView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E923F22315C8A20041B4A4 /* DropView.swift */; };
 		86E923F52316C1420041B4A4 /* PrefState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E923F42316C1420041B4A4 /* PrefState.swift */; };
 		86FE55E423157FA300847FDE /* PrefClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FE55E323157FA300847FDE /* PrefClass.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		739CE829231C3F8400FB1A6E /* PrefResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefResults.swift; sourceTree = "<group>"; };
 		865ABF57230EDE61004FDEBF /* YAST.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YAST.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		865ABF5A230EDE61004FDEBF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		865ABF5C230EDE61004FDEBF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -25,7 +27,7 @@
 		865ABF61230EDE63004FDEBF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		865ABF63230EDE63004FDEBF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		865ABF64230EDE63004FDEBF /* STIG_Checker.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = STIG_Checker.entitlements; sourceTree = "<group>"; };
-		865ABF6A230F2560004FDEBF /* NOTmain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NOTmain.swift; sourceTree = "<group>"; };
+		865ABF6A230F2560004FDEBF /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		86E923F22315C8A20041B4A4 /* DropView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropView.swift; sourceTree = "<group>"; };
 		86E923F42316C1420041B4A4 /* PrefState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefState.swift; sourceTree = "<group>"; };
 		86FE55E323157FA300847FDE /* PrefClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefClass.swift; sourceTree = "<group>"; };
@@ -62,8 +64,9 @@
 			isa = PBXGroup;
 			children = (
 				865ABF5A230EDE61004FDEBF /* AppDelegate.swift */,
-				865ABF6A230F2560004FDEBF /* NOTmain.swift */,
+				865ABF6A230F2560004FDEBF /* main.swift */,
 				86E923F42316C1420041B4A4 /* PrefState.swift */,
+				739CE829231C3F8400FB1A6E /* PrefResults.swift */,
 				86FE55E323157FA300847FDE /* PrefClass.swift */,
 				865ABF5C230EDE61004FDEBF /* ViewController.swift */,
 				865ABF5E230EDE63004FDEBF /* Assets.xcassets */,
@@ -156,8 +159,9 @@
 				865ABF5D230EDE61004FDEBF /* ViewController.swift in Sources */,
 				86FE55E423157FA300847FDE /* PrefClass.swift in Sources */,
 				865ABF5B230EDE61004FDEBF /* AppDelegate.swift in Sources */,
-				865ABF6B230F2560004FDEBF /* NOTmain.swift in Sources */,
+				865ABF6B230F2560004FDEBF /* main.swift in Sources */,
 				86E923F52316C1420041B4A4 /* PrefState.swift in Sources */,
+				739CE82A231C3F8400FB1A6E /* PrefResults.swift in Sources */,
 				86E923F32315C8A20041B4A4 /* DropView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
