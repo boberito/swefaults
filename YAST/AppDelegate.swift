@@ -1,8 +1,5 @@
 //
-//  AppDelegate.swift
-//  MacCacher
-//
-//  Created by Gendler, Bob (Fed) on 6/26/19.
+//  Created by Gendler, Bob (Fed) on 8/22/19.
 //  Copyright © 2019 Gendler, Bob (Fed). All rights reserved.
 //
 
@@ -12,8 +9,6 @@ import Cocoa
 
 //@NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
-    
-    @IBOutlet weak var preferencesMenuItem: NSMenuItem!
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Insert code here to initialize your application

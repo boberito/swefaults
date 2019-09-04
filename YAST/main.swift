@@ -32,6 +32,7 @@ if arguments.count <= 1 {
                 print(result.location!)
             case .NotFound:
                 print(result.domain!)
+                print(result.key!)
                 print("Setting not found or set")
             }
             
@@ -52,6 +53,7 @@ if arguments.count <= 1 {
             print(result.location!)
         case .NotFound:
             print(result.domain!)
+            print(result.key!)
             print("Setting not found or set")
         }
     }

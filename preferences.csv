@@ -1,0 +1,5 @@
+com.apple.security.smartcard,enforceSmartCard
+com.jamfsoftware.jamf,jss_url
+com.apple.screensave2r,idleTime
+com.apple.screensaver,idleTime
+com.apple.screensaver,somethingelse
