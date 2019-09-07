@@ -100,9 +100,9 @@ class ViewController: NSViewController {
             }
         }
     }
-    
-    
+
     @IBAction func lookupAction(_ sender: Any) {
+        
         preference.removeAll()
         
         if prefKeyField.stringValue == "*" {
@@ -111,11 +111,21 @@ class ViewController: NSViewController {
                                 (prefDomainField.stringValue as CFString, kCFPreferencesCurrentUser, kCFPreferencesCurrentHost),
                                 (prefDomainField.stringValue as CFString, kCFPreferencesAnyUser, kCFPreferencesCurrentHost)]
             let keys = optionsArray.compactMap { (opt1, opt2, opt3) in return CFPreferencesCopyKeyList(opt1, opt2, opt3) }
+            
             let array_temp = flatten(keys)
             let array = array_temp as! [String]
-            for key in array {
+            for key in array.removingDuplicates() {
                 let result = prefCheck.prefCheck(domain: prefDomainField.stringValue, key: key )
                 preference.append(prefSwitch(result: result))
+            }
+            
+            if let nsDictionary = NSDictionary(contentsOfFile: "/Library/Managed Preferences/\(prefDomainField.stringValue).plist") {
+                for key in nsDictionary.allKeys {
+                    let result = prefCheck.prefCheck(domain: prefDomainField.stringValue, key: key as! String )
+                    preference.append(prefSwitch(result: result))
+        
+                }
+                
             }
         } else {
             
@@ -144,8 +154,6 @@ extension ViewController: DragViewDelegate {
         
     }
     
-    
-    
 }
 
 
@@ -154,8 +162,7 @@ extension ViewController: NSTableViewDelegate {
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
         
         if let tableCell = tableView.makeView(withIdentifier: tableColumn!.identifier, owner: self) as? NSTableCellView {
-            
-            
+  
             if tableColumn?.title == "Managed" {
                 if let managed = preference[row]["Managed"] {
                     tableCell.textField?.stringValue = managed ?? ""
@@ -178,8 +185,7 @@ extension ViewController: NSTableViewDelegate {
                 if let value = preference[row]["Value"] {
                     tableCell.textField?.stringValue = value ?? ""
                     return tableCell
-                    
-                    
+     
                 }
             }
             if tableColumn?.title == "Location" {

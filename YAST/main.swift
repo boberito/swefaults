@@ -4,9 +4,6 @@ import Cocoa
 
 let arguments = CommandLine.arguments
 
-
-
-
 if arguments.count <= 1 {
     NSApplicationMain(CommandLine.argc,CommandLine.unsafeArgv)
     
@@ -35,7 +32,6 @@ if arguments.count <= 1 {
                 print(result.key!)
                 print("Setting not found or set")
             }
-            
             
         }
 

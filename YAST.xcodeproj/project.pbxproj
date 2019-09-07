@@ -13,6 +13,7 @@
 		865ABF5F230EDE63004FDEBF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 865ABF5E230EDE63004FDEBF /* Assets.xcassets */; };
 		865ABF62230EDE63004FDEBF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 865ABF60230EDE63004FDEBF /* Main.storyboard */; };
 		865ABF6B230F2560004FDEBF /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865ABF6A230F2560004FDEBF /* main.swift */; };
+		86D09AB42321A324009B77AA /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D09AB32321A324009B77AA /* ArrayExtension.swift */; };
 		86E923F32315C8A20041B4A4 /* DropView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E923F22315C8A20041B4A4 /* DropView.swift */; };
 		86E923F52316C1420041B4A4 /* PrefState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E923F42316C1420041B4A4 /* PrefState.swift */; };
 		86FE55E423157FA300847FDE /* PrefClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FE55E323157FA300847FDE /* PrefClass.swift */; };
@@ -28,6 +29,7 @@
 		865ABF61230EDE63004FDEBF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		865ABF63230EDE63004FDEBF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		865ABF6A230F2560004FDEBF /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		86D09AB32321A324009B77AA /* ArrayExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtension.swift; sourceTree = "<group>"; };
 		86E923F22315C8A20041B4A4 /* DropView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropView.swift; sourceTree = "<group>"; };
 		86E923F42316C1420041B4A4 /* PrefState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefState.swift; sourceTree = "<group>"; };
 		86FE55E323157FA300847FDE /* PrefClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefClass.swift; sourceTree = "<group>"; };
@@ -70,6 +72,7 @@
 				739CE829231C3F8400FB1A6E /* PrefResults.swift */,
 				86FE55E323157FA300847FDE /* PrefClass.swift */,
 				865ABF5C230EDE61004FDEBF /* ViewController.swift */,
+				86D09AB32321A324009B77AA /* ArrayExtension.swift */,
 				865ABF5E230EDE63004FDEBF /* Assets.xcassets */,
 				865ABF60230EDE63004FDEBF /* Main.storyboard */,
 				86E923F22315C8A20041B4A4 /* DropView.swift */,
@@ -112,7 +115,7 @@
 						CreatedOnToolsVersion = 10.3;
 						SystemCapabilities = {
 							com.apple.HardenedRuntime = {
-								enabled = 1;
+								enabled = 0;
 							};
 							com.apple.Sandbox = {
 								enabled = 0;
@@ -159,6 +162,7 @@
 				865ABF5D230EDE61004FDEBF /* ViewController.swift in Sources */,
 				86FE55E423157FA300847FDE /* PrefClass.swift in Sources */,
 				865ABF5B230EDE61004FDEBF /* AppDelegate.swift in Sources */,
+				86D09AB42321A324009B77AA /* ArrayExtension.swift in Sources */,
 				865ABF6B230F2560004FDEBF /* main.swift in Sources */,
 				86E923F52316C1420041B4A4 /* PrefState.swift in Sources */,
 				739CE82A231C3F8400FB1A6E /* PrefResults.swift in Sources */,
@@ -299,11 +303,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 2WUMX954UB;
-				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/YAST/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -320,11 +323,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 2WUMX954UB;
-				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/YAST/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
