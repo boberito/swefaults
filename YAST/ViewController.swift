@@ -53,7 +53,7 @@ class ViewController: NSViewController {
                 "Location" : result.location
                 ])
         case .NotFound:
-            if result.key == nil {
+            if result.key == "" {
                 return([
                     "Managed" : nil,
                     "Domain" : result.domain ?? "",
@@ -100,12 +100,13 @@ class ViewController: NSViewController {
             }
         }
     }
-
+    
     @IBAction func lookupAction(_ sender: Any) {
         
         preference.removeAll()
         
-        if prefKeyField.stringValue == "*" {
+        if prefKeyField.stringValue == "*" && prefDomainField.stringValue != "" {
+            
             let optionsArray = [(prefDomainField.stringValue as CFString, kCFPreferencesCurrentUser, kCFPreferencesAnyHost),
                                 (prefDomainField.stringValue as CFString, kCFPreferencesAnyUser, kCFPreferencesAnyHost),
                                 (prefDomainField.stringValue as CFString, kCFPreferencesCurrentUser, kCFPreferencesCurrentHost),
@@ -114,19 +115,36 @@ class ViewController: NSViewController {
             
             let array_temp = flatten(keys)
             let array = array_temp as! [String]
+            
             for key in array.removingDuplicates() {
                 let result = prefCheck.prefCheck(domain: prefDomainField.stringValue, key: key )
                 preference.append(prefSwitch(result: result))
+                
             }
+            var defaults: UserDefaults?
+            var allItems: NSDictionary?
             
-            if let nsDictionary = NSDictionary(contentsOfFile: "/Library/Managed Preferences/\(prefDomainField.stringValue).plist") {
-                for key in nsDictionary.allKeys {
-                    let result = prefCheck.prefCheck(domain: prefDomainField.stringValue, key: key as! String )
+            
+            defaults = UserDefaults.init(suiteName: prefDomainField.stringValue)
+            allItems = defaults?.dictionaryRepresentation() as NSDictionary?
+            for item in allItems! {
+                if (defaults?.objectIsForced(forKey: item.key as! String))! {
+                    let result = prefCheck.prefCheck(domain: prefDomainField.stringValue, key: item.key as! String )
                     preference.append(prefSwitch(result: result))
-        
                 }
                 
             }
+            if preference.count == 0 {
+                preference.append([
+                    "Managed" : "Not found",
+                    "Domain" : prefDomainField.stringValue,
+                    "Key" : "No Keys found",
+                    "Value" : nil,
+                    "Location" : nil
+                    ])
+                
+            }
+            
         } else {
             
             if prefDomainField.stringValue == ""{
@@ -140,6 +158,7 @@ class ViewController: NSViewController {
             } else {
                 let result = prefCheck.prefCheck(domain: prefDomainField.stringValue, key: prefKeyField.stringValue)
                 preference.append(prefSwitch(result: result))
+                
             }
             
         }
@@ -162,7 +181,7 @@ extension ViewController: NSTableViewDelegate {
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
         
         if let tableCell = tableView.makeView(withIdentifier: tableColumn!.identifier, owner: self) as? NSTableCellView {
-  
+            
             if tableColumn?.title == "Managed" {
                 if let managed = preference[row]["Managed"] {
                     tableCell.textField?.stringValue = managed ?? ""
@@ -185,7 +204,7 @@ extension ViewController: NSTableViewDelegate {
                 if let value = preference[row]["Value"] {
                     tableCell.textField?.stringValue = value ?? ""
                     return tableCell
-     
+                    
                 }
             }
             if tableColumn?.title == "Location" {
