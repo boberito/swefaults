@@ -6,14 +6,14 @@ let arguments = CommandLine.arguments
 
 if arguments.count <= 1 {
     NSApplicationMain(CommandLine.argc,CommandLine.unsafeArgv)
-    
+
 } else {
     let prefs = PrefClass()
     if arguments[1] == "--csv" {
-        
+
         let contents = try NSString(contentsOfFile: arguments[2], encoding: String.Encoding.utf8.rawValue)
         let parsedCSV: [[String]] = contents.components(separatedBy: "\n").map{ $0.components(separatedBy: ",") }
-        
+
         for entry in parsedCSV {
             print("---------------------------------------------------")
             let result = prefs.prefCheck(domain: entry[0], key: entry[1])
@@ -32,7 +32,7 @@ if arguments.count <= 1 {
                 print(result.key!)
                 print("Setting not found or set")
             }
-            
+
         }
 
     } else {
