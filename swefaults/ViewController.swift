@@ -34,6 +34,8 @@ class ViewController: NSViewController {
         }
     }
     
+    
+    
     func prefSwitch(result: PrefResult) -> [String:String?] {
         switch result.managed {
         case .Managed:

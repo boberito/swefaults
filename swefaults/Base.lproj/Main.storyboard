@@ -684,7 +684,7 @@
         <scene sceneID="R2V-B0-nI4">
             <objects>
                 <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
-                    <window key="window" title="Yet Another System Tool" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" visibleAtLaunch="NO" animationBehavior="default" titlebarAppearsTransparent="YES" id="IQv-IB-iLA">
+                    <window key="window" title="swefaults" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" visibleAtLaunch="NO" animationBehavior="default" titlebarAppearsTransparent="YES" id="IQv-IB-iLA">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="196" y="240" width="480" height="270"/>
@@ -706,14 +706,14 @@
             <objects>
                 <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="swefaults" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" misplaced="YES" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="695" height="373"/>
+                        <rect key="frame" x="0.0" y="0.0" width="695" height="344"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="K8R-y2-xeY" customClass="DropView" customModule="swefaults" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="695" height="133"/>
+                                <rect key="frame" x="0.0" y="0.0" width="695" height="344"/>
                             </customView>
                             <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="rWY-wj-sHD">
-                                <rect key="frame" x="175" y="93" width="350" height="25"/>
+                                <rect key="frame" x="175" y="304" width="350" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="350" id="Ihn-Mh-cRQ"/>
                                     <constraint firstAttribute="height" constant="25" id="rN6-Lt-huh"/>
@@ -725,7 +725,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="vyi-64-sdG">
-                                <rect key="frame" x="175" y="58" width="350" height="25"/>
+                                <rect key="frame" x="175" y="269" width="350" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="JRW-vT-29v"/>
                                     <constraint firstAttribute="width" constant="350" id="ogY-xf-ZJn"/>
@@ -737,7 +737,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="3iu-oi-Vmi">
-                                <rect key="frame" x="23" y="95" width="127" height="20"/>
+                                <rect key="frame" x="23" y="306" width="127" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="OTl-64-St1"/>
                                 </constraints>
@@ -748,7 +748,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="5lB-Ar-8i9">
-                                <rect key="frame" x="23" y="60" width="125" height="20"/>
+                                <rect key="frame" x="23" y="271" width="125" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="121" id="Jf7-xc-LHr"/>
                                     <constraint firstAttribute="height" constant="20" id="RCQ-xa-yzX"/>
@@ -760,13 +760,13 @@
                                 </textFieldCell>
                             </textField>
                             <scrollView autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WEz-Us-nFj">
-                                <rect key="frame" x="0.0" y="0.0" width="695" height="49"/>
+                                <rect key="frame" x="0.0" y="0.0" width="695" height="260"/>
                                 <clipView key="contentView" id="e2d-ht-5ch">
-                                    <rect key="frame" x="1" y="1" width="693" height="47"/>
+                                    <rect key="frame" x="1" y="1" width="693" height="258"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" headerView="B7t-zd-PO7" viewBased="YES" id="WnN-3u-wQq">
-                                            <rect key="frame" x="0.0" y="0.0" width="693" height="19"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="693" height="230"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <size key="intercellSpacing" width="3" height="2"/>
                                             <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -885,7 +885,7 @@
                                                         <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </tableHeaderCell>
-                                                    <textFieldCell key="dataCell" lineBreakMode="truncatingTail" selectable="YES" editable="YES" alignment="left" title="Text Cell" id="xcL-MY-3Mz">
+                                                    <textFieldCell key="dataCell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" alignment="left" title="Text Cell" id="xcL-MY-3Mz">
                                                         <font key="font" metaFont="system"/>
                                                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -896,9 +896,9 @@
                                                             <rect key="frame" x="450" y="1" width="107" height="17"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
-                                                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="EwP-ic-T66">
+                                                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EwP-ic-T66">
                                                                     <rect key="frame" x="0.0" y="1" width="107" height="16"/>
-                                                                    <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Table View Cell" id="XCQ-eq-ZYS">
+                                                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" sendsActionOnEndEditing="YES" title="Table View Cell" id="XCQ-eq-ZYS">
                                                                         <font key="font" metaFont="system"/>
                                                                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -974,7 +974,7 @@
                                 </tableHeaderView>
                             </scrollView>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="J5F-Nj-sXo">
-                                <rect key="frame" x="568" y="71" width="79" height="32"/>
+                                <rect key="frame" x="568" y="282" width="79" height="32"/>
                                 <buttonCell key="cell" type="push" title="Lookup" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="c9g-oe-ktU">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
