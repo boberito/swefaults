@@ -1,5 +1,5 @@
-# YAST
- Yet another system tool - name in progress
+# swefaults
+
 
 Credits to @gregneagle with fancy_defaults_read.py - https://gist.github.com/gregneagle/010b369e86410a2f279ff8e980585c68
 
