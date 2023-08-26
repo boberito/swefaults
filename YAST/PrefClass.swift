@@ -17,20 +17,25 @@ class PrefClass {
             if CFPreferencesAppValueIsForced(key as CFString, domain as CFString) {
                 return (PrefResult(managed: .Managed, domain: domain, key: key, value: "\(preference_value)", location: nil))
             } else {
-                
+                let matchingDict = IOServiceMatching("IOPlatformExpertDevice")
+                    let platformExpert = IOServiceGetMatchingService(kIOMasterPortDefault, matchingDict)
+                    defer{ IOObjectRelease(platformExpert) }
+
+                let deviceUUID = IORegistryEntryCreateCFProperty(platformExpert, kIOPlatformUUIDKey as CFString, kCFAllocatorDefault, 0).takeRetainedValue() as? String
+
                 let homeDirURL = FileManager.default.homeDirectoryForCurrentUser
                 let levels = [
-                    ["file": "\(homeDirURL.path)/Library/Preferences/ByHost/\(domain).xxxx.plist",
+                    ["file": "\(homeDirURL.path)/Library/Preferences/ByHost/\(domain).\(deviceUUID!).plist",
                         "domain": domain,
                         "user": kCFPreferencesCurrentUser,
                         "host": kCFPreferencesCurrentHost
-                    ],
+                    ] as [String : Any],
                     ["file": "\(homeDirURL.path)/Library/Preferences/\(domain).plist",
                         "domain": domain,
                         "user": kCFPreferencesCurrentUser,
                         "host": kCFPreferencesAnyHost
                     ],
-                    ["file": "\(homeDirURL.path)/Library/Preferences/ByHost/.GlobalPreferences.xxxx.plist",
+                    ["file": "\(homeDirURL.path)/Library/Preferences/ByHost/.GlobalPreferences.\(deviceUUID!).plist",
                         "domain": ".GlobalPreferences",
                         "user": kCFPreferencesCurrentUser,
                         "host": kCFPreferencesCurrentHost

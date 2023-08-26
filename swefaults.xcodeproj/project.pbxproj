@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 53;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -12,7 +12,7 @@
 		865ABF5D230EDE61004FDEBF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865ABF5C230EDE61004FDEBF /* ViewController.swift */; };
 		865ABF5F230EDE63004FDEBF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 865ABF5E230EDE63004FDEBF /* Assets.xcassets */; };
 		865ABF62230EDE63004FDEBF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 865ABF60230EDE63004FDEBF /* Main.storyboard */; };
-		865ABF6B230F2560004FDEBF /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865ABF6A230F2560004FDEBF /* main.swift */; };
+		865ABF6B230F2560004FDEBF /* cli.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865ABF6A230F2560004FDEBF /* cli.swift */; };
 		86D09AB42321A324009B77AA /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D09AB32321A324009B77AA /* ArrayExtension.swift */; };
 		86E923F32315C8A20041B4A4 /* DropView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E923F22315C8A20041B4A4 /* DropView.swift */; };
 		86E923F52316C1420041B4A4 /* PrefState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E923F42316C1420041B4A4 /* PrefState.swift */; };
@@ -22,13 +22,13 @@
 /* Begin PBXFileReference section */
 		739CE829231C3F8400FB1A6E /* PrefResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefResults.swift; sourceTree = "<group>"; };
 		863FE3192320261D00042BE9 /* YAST.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = YAST.entitlements; sourceTree = "<group>"; };
-		865ABF57230EDE61004FDEBF /* YAST.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YAST.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		865ABF57230EDE61004FDEBF /* swefaults.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = swefaults.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		865ABF5A230EDE61004FDEBF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		865ABF5C230EDE61004FDEBF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		865ABF5E230EDE63004FDEBF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		865ABF61230EDE63004FDEBF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		865ABF63230EDE63004FDEBF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		865ABF6A230F2560004FDEBF /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		865ABF6A230F2560004FDEBF /* cli.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cli.swift; sourceTree = "<group>"; };
 		86D09AB32321A324009B77AA /* ArrayExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtension.swift; sourceTree = "<group>"; };
 		86E923F22315C8A20041B4A4 /* DropView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropView.swift; sourceTree = "<group>"; };
 		86E923F42316C1420041B4A4 /* PrefState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefState.swift; sourceTree = "<group>"; };
@@ -57,7 +57,7 @@
 		865ABF58230EDE61004FDEBF /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				865ABF57230EDE61004FDEBF /* YAST.app */,
+				865ABF57230EDE61004FDEBF /* swefaults.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -67,7 +67,7 @@
 			children = (
 				863FE3192320261D00042BE9 /* YAST.entitlements */,
 				865ABF5A230EDE61004FDEBF /* AppDelegate.swift */,
-				865ABF6A230F2560004FDEBF /* main.swift */,
+				865ABF6A230F2560004FDEBF /* cli.swift */,
 				86E923F42316C1420041B4A4 /* PrefState.swift */,
 				739CE829231C3F8400FB1A6E /* PrefResults.swift */,
 				86FE55E323157FA300847FDE /* PrefClass.swift */,
@@ -84,9 +84,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		865ABF56230EDE60004FDEBF /* YAST */ = {
+		865ABF56230EDE60004FDEBF /* swefaults */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 865ABF67230EDE63004FDEBF /* Build configuration list for PBXNativeTarget "YAST" */;
+			buildConfigurationList = 865ABF67230EDE63004FDEBF /* Build configuration list for PBXNativeTarget "swefaults" */;
 			buildPhases = (
 				865ABF53230EDE60004FDEBF /* Sources */,
 				865ABF54230EDE60004FDEBF /* Frameworks */,
@@ -96,9 +96,9 @@
 			);
 			dependencies = (
 			);
-			name = YAST;
+			name = swefaults;
 			productName = "STIG Checker";
-			productReference = 865ABF57230EDE61004FDEBF /* YAST.app */;
+			productReference = 865ABF57230EDE61004FDEBF /* swefaults.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -107,8 +107,9 @@
 		865ABF4F230EDE60004FDEBF /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1030;
-				LastUpgradeCheck = 1030;
+				BuildIndependentTargetsInParallel = YES;
+				LastSwiftUpdateCheck = 1170;
+				LastUpgradeCheck = 1430;
 				ORGANIZATIONNAME = "Gendler, Bob (Fed)";
 				TargetAttributes = {
 					865ABF56230EDE60004FDEBF = {
@@ -124,7 +125,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 865ABF52230EDE60004FDEBF /* Build configuration list for PBXProject "YAST" */;
+			buildConfigurationList = 865ABF52230EDE60004FDEBF /* Build configuration list for PBXProject "swefaults" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -137,7 +138,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				865ABF56230EDE60004FDEBF /* YAST */,
+				865ABF56230EDE60004FDEBF /* swefaults */,
 			);
 		};
 /* End PBXProject section */
@@ -163,7 +164,7 @@
 				86FE55E423157FA300847FDE /* PrefClass.swift in Sources */,
 				865ABF5B230EDE61004FDEBF /* AppDelegate.swift in Sources */,
 				86D09AB42321A324009B77AA /* ArrayExtension.swift in Sources */,
-				865ABF6B230F2560004FDEBF /* main.swift in Sources */,
+				865ABF6B230F2560004FDEBF /* cli.swift in Sources */,
 				86E923F52316C1420041B4A4 /* PrefState.swift in Sources */,
 				739CE82A231C3F8400FB1A6E /* PrefResults.swift in Sources */,
 				86E923F32315C8A20041B4A4 /* DropView.swift in Sources */,
@@ -210,6 +211,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -218,6 +220,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -271,6 +274,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -279,6 +283,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -303,16 +308,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "-";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 2WUMX954UB;
+				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/YAST/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = gov.nist.YAST;
+				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ttInc.yast;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
@@ -323,16 +331,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "-";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 2WUMX954UB;
+				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/YAST/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = gov.nist.YAST;
+				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ttInc.yast;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
@@ -342,7 +353,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		865ABF52230EDE60004FDEBF /* Build configuration list for PBXProject "YAST" */ = {
+		865ABF52230EDE60004FDEBF /* Build configuration list for PBXProject "swefaults" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				865ABF65230EDE63004FDEBF /* Debug */,
@@ -351,7 +362,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		865ABF67230EDE63004FDEBF /* Build configuration list for PBXNativeTarget "YAST" */ = {
+		865ABF67230EDE63004FDEBF /* Build configuration list for PBXNativeTarget "swefaults" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				865ABF68230EDE63004FDEBF /* Debug */,
