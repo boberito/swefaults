@@ -21,7 +21,7 @@
 
 /* Begin PBXFileReference section */
 		739CE829231C3F8400FB1A6E /* PrefResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefResults.swift; sourceTree = "<group>"; };
-		863FE3192320261D00042BE9 /* YAST.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = YAST.entitlements; sourceTree = "<group>"; };
+		863FE3192320261D00042BE9 /* swefaults.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = swefaults.entitlements; sourceTree = "<group>"; };
 		865ABF57230EDE61004FDEBF /* swefaults.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = swefaults.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		865ABF5A230EDE61004FDEBF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		865ABF5C230EDE61004FDEBF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -49,7 +49,7 @@
 		865ABF4E230EDE60004FDEBF = {
 			isa = PBXGroup;
 			children = (
-				865ABF59230EDE61004FDEBF /* YAST */,
+				865ABF59230EDE61004FDEBF /* swefaults */,
 				865ABF58230EDE61004FDEBF /* Products */,
 			);
 			sourceTree = "<group>";
@@ -62,10 +62,10 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		865ABF59230EDE61004FDEBF /* YAST */ = {
+		865ABF59230EDE61004FDEBF /* swefaults */ = {
 			isa = PBXGroup;
 			children = (
-				863FE3192320261D00042BE9 /* YAST.entitlements */,
+				863FE3192320261D00042BE9 /* swefaults.entitlements */,
 				865ABF5A230EDE61004FDEBF /* AppDelegate.swift */,
 				865ABF6A230F2560004FDEBF /* cli.swift */,
 				86E923F42316C1420041B4A4 /* PrefState.swift */,
@@ -78,7 +78,7 @@
 				86E923F22315C8A20041B4A4 /* DropView.swift */,
 				865ABF63230EDE63004FDEBF /* Info.plist */,
 			);
-			path = YAST;
+			path = swefaults;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -314,7 +314,7 @@
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 2WUMX954UB;
 				ENABLE_HARDENED_RUNTIME = YES;
-				INFOPLIST_FILE = "$(SRCROOT)/YAST/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/swefaults/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -337,7 +337,7 @@
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 2WUMX954UB;
 				ENABLE_HARDENED_RUNTIME = YES;
-				INFOPLIST_FILE = "$(SRCROOT)/YAST/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/swefaults/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
